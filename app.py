@@ -11,7 +11,7 @@ import os
 #username = getpass.getuser()
 #UPLOAD_FOLDER = '/Users/'+username+'/Desktop/'
 
-print(UPLOAD_FOLDER)
+
 app = Flask(__name__)
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
 app.config['UPLOAD_EXTENSIONS'] = ['.txt']
