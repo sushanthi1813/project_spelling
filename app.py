@@ -8,14 +8,23 @@ import os
 #close it open aws
 
 
-username = getpass.getuser()
-UPLOAD_FOLDER = '/Users/'+username+'/Desktop/'
+#username = getpass.getuser()
+#UPLOAD_FOLDER = '/Users/'+username+'/Desktop/'
 
 print(UPLOAD_FOLDER)
 app = Flask(__name__)
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
 app.config['UPLOAD_EXTENSIONS'] = ['.txt']
-app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+
+
+folder_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'static/uploads/desktop')
+
+
+if not os.path.exists(folder_path):
+    os.makedirs(folder_path)
+    
+
+app.config['UPLOAD_FOLDER'] = folder_path
 
 @app.route("/", methods=["GET", "POST"])
 def index():
