@@ -1,4 +1,4 @@
-Flask==1.1.1
+Flask
 textblob==0.15.3
 pyspellchecker==0.5.5
 regex==2020.7.14
