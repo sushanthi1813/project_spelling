@@ -54,7 +54,7 @@ def index():
         if file:
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], file.filename))
             
-            f = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'static/uploads/desktop'+file.filename),"r+")
+            f = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'static/uploads/desktop/'+file.filename),"r+")
             filecontent=f.read()
             a= str(filecontent)
             b = TextBlob(a)
